@@ -1,0 +1,4 @@
+deps
+scratch
+bench/tcp-server/bench
+*.o
