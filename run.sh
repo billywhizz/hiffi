@@ -1,1 +1,5 @@
-LD_PRELOAD=$(pwd)/lib/pico.so /home/andrew/.cargo/bin/flamegraph -o deno-perf.svg --palette js -- scratch/deno run -A --v8-flags="--perf-basic-prof" --unstable server.js
+#!/bin/bash
+if [ ! -f pico.so ]; then
+  curl -s -o pico.so -L https://raw.githubusercontent.com/billywhizz/hiffi/main/lib/pico.so
+fi
+LD_LIBRARY_PATH=./ deno run --allow-ffi --unstable https://raw.githubusercontent.com/billywhizz/hiffi/main/server.js
