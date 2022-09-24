@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include <stdio.h>
-#include "deps/picohttpparser/picohttpparser.h"
+#include "picohttpparser.h"
 
 #define JUST_MAX_HEADERS 14
 
@@ -26,6 +26,7 @@ int parse(char* next, ssize_t bytes, httpRequest* req) {
   const char* method;
   const char* path;
   struct phr_header headers[JUST_MAX_HEADERS];
+  req->num_headers = JUST_MAX_HEADERS;
   int nread = phr_parse_request(next, bytes, 
     (const char **)&method, 
     &req->method_len, (const char **)&path, 

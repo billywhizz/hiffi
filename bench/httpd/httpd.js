@@ -1,4 +1,4 @@
-import { serve } from './lib/httpd.js'
+import { serve } from '../../lib/httpd.js'
 
 serve ((res, req) => {
   if (req.method === 'GET' && req.url === '/') {

@@ -1,5 +1,5 @@
 #!/bin/bash
 if [ ! -f pico.so ]; then
-  curl -s -o pico.so -L https://raw.githubusercontent.com/billywhizz/hiffi/main/lib/pico.so
+  curl -s -o pico.so -L https://raw.githubusercontent.com/billywhizz/hiffi/main/src/pico.so
 fi
-LD_LIBRARY_PATH=./ deno run --allow-ffi --unstable https://raw.githubusercontent.com/billywhizz/hiffi/main/server.js
+LD_PRELOAD=./pico.so deno run --allow-ffi --unstable https://raw.githubusercontent.com/billywhizz/hiffi/main/hello.js

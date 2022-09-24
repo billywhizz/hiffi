@@ -1,4 +1,4 @@
-import { pico } from '../../lib/http.js'
+import { pico } from '../../lib/pico.js'
 
 const { parse, types } = pico
 const { encode, ops } = Deno.core
