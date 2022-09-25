@@ -23,9 +23,9 @@ library: ## compile shared library and dependencies
 	strip --strip-debug --strip-unneeded ${MODULE}.so
 
 clean: ## tidy up
-	rm -f *.o
-	rm -f *.so
-	rm -f *.so.debug
+	rm -f hescape.o picohttpparser.o ${MODULE}.o
+	rm -f ${MODULE}.so
+	rm -f ${MODULE}.so.debug
 	
 all: ## make all
 	make clean
